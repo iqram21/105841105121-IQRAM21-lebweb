@@ -7,29 +7,35 @@ const App = () => {
       //justifyContent: baris
       //alignItems: kolom
       flex: 1,
+      marginTop: 250,
     }}>
     <View style={{
-      justifyContent: 'flex-start',
-      alignItems: 'flex-start',
+      // flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
     }}>
     <View style={{
       width: 100,
       height: 100,
       backgroundColor: 'red',
+      justifyContent: 'center',
+      alignSelf: 'center',
+      // marginTop: 500,
     }}>
     </View>
     </View>
     <View style ={{
       //justifyContent: baris
       //alignItems: kolom
-      flex: 1,
-      justifyContent: 'flex-end',
-      alignItems: 'flex-end',
+      // flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
     }}>
     <View style={{
       width: 100,
       height: 100,
       backgroundColor: 'blue',
+      alignSelf: 'center',
     }}>
       </View>
       </View>
