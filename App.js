@@ -4,32 +4,37 @@ import React from 'react';
 const App = () => {
   return (
     <View style ={{
-      flex : 1,
+      //justifyContent: baris
+      //alignItems: kolom
+      flex: 1,
     }}>
-      <View style ={{
-       flex : 1,
-       flexDirection : 'row'
-       }}>
-      <View style={{
-        flex: 1,
-        backgroundColor: 'red',
-      }}>
-      </View>
-      <View style={{
-        flex: 1,
-        backgroundColor: 'black',
-      }}>
-      </View>
-      </View>
-      <View style={{
-        flex: 1,
-        backgroundColor: 'yellow',
-      }}></View>
-       <View style={{
-        flex: 1,
-        backgroundColor: 'blue',
-      }}></View>
+    <View style={{
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+    }}>
+    <View style={{
+      width: 100,
+      height: 100,
+      backgroundColor: 'red',
+    }}>
     </View>
+    </View>
+    <View style ={{
+      //justifyContent: baris
+      //alignItems: kolom
+      flex: 1,
+      justifyContent: 'flex-end',
+      alignItems: 'flex-end',
+    }}>
+    <View style={{
+      width: 100,
+      height: 100,
+      backgroundColor: 'blue',
+    }}>
+      </View>
+      </View>
+      </View>
   )
+
 }
 export default App
