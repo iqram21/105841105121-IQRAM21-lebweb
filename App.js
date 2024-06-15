@@ -7,36 +7,35 @@ const App = () => {
       //justifyContent: baris
       //alignItems: kolom
       flex: 1,
-      marginTop: 250,
-    }}>
-    <View style={{
-      // flex: 1,
       justifyContent: 'center',
-      alignItems: 'center',
+      alignItems:'center',
+
     }}>
     <View style={{
-      width: 100,
-      height: 100,
+      flexDirection: 'row',
+      justifyContent:'center',
+      alignItems:'center'
+    }}>
+    <View style={{
+      width: 110,
+      height: 80,
+      borderRadius: 20,
       backgroundColor: 'red',
-      justifyContent: 'center',
-      alignSelf: 'center',
-      // marginTop: 500,
+      justifyContent:'center',
+      alignItems:'center',
+      marginRight: 20,
     }}>
+      <Text style={{color: 'white', fontSize: 18, fontWeight: 'bold'}}>Login</Text>
     </View>
-    </View>
-    <View style ={{
-      //justifyContent: baris
-      //alignItems: kolom
-      // flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}>
     <View style={{
-      width: 100,
-      height: 100,
+      width: 110,
+      height: 80,
+      borderRadius: 20,
       backgroundColor: 'blue',
-      alignSelf: 'center',
+      justifyContent:'center',
+      alignItems:'center'
     }}>
+      <Text style={{color: 'white', fontSize: 18, fontWeight: 'bold'}}>Sign In</Text>
       </View>
       </View>
       </View>
