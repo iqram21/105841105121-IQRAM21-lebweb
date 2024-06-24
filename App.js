@@ -1,45 +1,61 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 import React from 'react';
+
+const ButtonCostum = ({text, color}) => {
+  return (
+    <View style ={{
+      backgroundColor: 'color',
+      width: 250,
+      height: 100,
+      borderRadius: 10,
+      justifyContent: 'center',
+      marginBottom: 10,
+    }}>
+      <Text style={{
+        textAlign: 'center',
+        color: 'black',
+        fontSize: 30,
+        fontWeight: 'bold',
+      }}>
+        {text}
+      </Text>
+
+    </View>
+  )
+
+}
+
+const TextInputCostum = ({placeholder,color,typeKeyboard}) => {
+  return (
+    <TextInput 
+      placeholder={placeholder}
+      keyboardType={typeKeyboard}
+
+        style={{
+          borderWidth: 1,
+          width: 250,
+          height: 40,
+          borderColor: 'blue',
+          marginBottom: 10,
+          borderRadius: 10,
+          paddingLeft: 10,
+        }}></TextInput>
+  )
+}
 
 const App = () => {
   return (
-    <View style ={{
-      //justifyContent: baris
-      //alignItems: kolom
+    <View style={{
       flex: 1,
       justifyContent: 'center',
-      alignItems:'center',
-
+      alignItems: 'center',
     }}>
-    <View style={{
-      flexDirection: 'row',
-      justifyContent:'center',
-      alignItems:'center'
-    }}>
-    <View style={{
-      width: 110,
-      height: 80,
-      borderRadius: 20,
-      backgroundColor: 'red',
-      justifyContent:'center',
-      alignItems:'center',
-      marginRight: 20,
-    }}>
-      <Text style={{color: 'white', fontSize: 18, fontWeight: 'bold'}}>Login</Text>
+     <View>
+      <TextInputCostum placeholder="Masukkan Nama" color="blue"/>
+      <TextInputCostum placeholder="Masukkan Alamat" color="blue"/>
+      <TextInputCostum placeholder="Masukkan Nomor Telepon" color="blue" typeKeyboard="numeric"/>
+      </View>
     </View>
-    <View style={{
-      width: 110,
-      height: 80,
-      borderRadius: 20,
-      backgroundColor: 'blue',
-      justifyContent:'center',
-      alignItems:'center'
-    }}>
-      <Text style={{color: 'white', fontSize: 18, fontWeight: 'bold'}}>Sign In</Text>
-      </View>
-      </View>
-      </View>
   )
-
 }
 export default App
