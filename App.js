@@ -1,61 +1,37 @@
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { useFonts } from 'expo-font';
+import { Text, View } from 'react-native';
 import React from 'react';
 
-const ButtonCostum = ({text, color}) => {
+export default function App() {
+  const [dapatFont] = useFonts({
+    'MetroBlack': require('./assets/fonts/Metropolis-Black.otf'),
+    'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
+    'MetroLight': require('./assets/fonts/Metropolis-Light.otf'),
+    'MetroSemibold': require('./assets/fonts/Metropolis-SemiBold.otf'),
+  });
+
+  if (!dapatFont) {
+    return <Text>Loading...</Text>;
+  }
+
   return (
     <View style ={{
-      backgroundColor: 'color',
-      width: 250,
-      height: 100,
-      borderRadius: 10,
-      justifyContent: 'center',
-      marginBottom: 10,
-    }}>
-      <Text style={{
-        textAlign: 'center',
-        color: 'black',
-        fontSize: 30,
-        fontWeight: 'bold',
-      }}>
-        {text}
-      </Text>
-
-    </View>
-  )
-
-}
-
-const TextInputCostum = ({placeholder,color,typeKeyboard}) => {
-  return (
-    <TextInput 
-      placeholder={placeholder}
-      keyboardType={typeKeyboard}
-
-        style={{
-          borderWidth: 1,
-          width: 250,
-          height: 40,
-          borderColor: 'blue',
-          marginBottom: 10,
-          borderRadius: 10,
-          paddingLeft: 10,
-        }}></TextInput>
-  )
-}
-
-const App = () => {
-  return (
-    <View style={{
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
     }}>
-     <View>
-      <TextInputCostum placeholder="Masukkan Nama" color="blue"/>
-      <TextInputCostum placeholder="Masukkan Alamat" color="blue"/>
-      <TextInputCostum placeholder="Masukkan Nomor Telepon" color="blue" typeKeyboard="numeric"/>
-      </View>
+      <Text style={{ 
+        fontFamily: 'MetroBlack',
+        }}>Metropolis</Text>
+      <Text style={{
+        fontFamily: 'MetroBold',
+        }}>Okesih</Text>
+      <Text style={{
+        fontFamily: 'MetroLight',
+        }}>Kuy</Text>
+      <Text style={{
+        fontFamily: 'MetroSemibold',
+        }}>Yuk</Text>
     </View>
-  )
+  );
 }
-export default App
