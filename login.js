@@ -1,79 +1,135 @@
-import { StyleSheet, Text, TextInput, View } from 'react-native'
-import React, { useState } from 'react'
+import { Text, View, TouchableOpacity, Image, TextInput} from 'react-native'
+import React from 'react'
+import { useFonts } from 'expo-font'
 
-const ButtonCustom = ({ text, color}) =>{
+const ButtonCustom = ({ text, color }) => {
     return (
-        <View style = {{
-            backgroundColor: color,
-            width: 250,
-            height: 50,
-            borderRadius: 10,
-            justifyContent: 'center',
-            marginBottom: 10
-        }}>
-         <Text style = {{
-            textAlign: 'center',
-            color: 'white', 
-            fontSize: 20,
-            fontWeight: 'bold'
-         }}>  
-         </Text>
-        </View>
-    )
+        <TouchableOpacity>
+            <View style={{
+                width: 320,
+                height: 50,
+                backgroundColor: color,
+                borderRadius: 50,
+                marginBottom: 40,
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}>
+                <Text style={{
+                    textAlign: 'center',
+                    color: 'white',
+                    fontSize: 18,
+                    fontWeight: 'bold'
+                }}>
+                    {text}
+                </Text>
+            </View>
+        </TouchableOpacity>
+    );
 }
 
-const TextInputCustom = ({placeholder, typeKeyboard}) =>{
+const TextInputCustom = ({ placeholder, color, typeKeyboard, secureTextEntry = false }) => {
     return (
         <TextInput
-        placeholder={placeholder}
-        keyboardType={typeKeyboard}
-        style={{
-            borderWidth: 1,
-            width: 250,
-            height: 40,
-            borderColor: 'blue',
-            marginBottom: 10,
-            borderRadius: 10,
-            paddingLeft: 10
-        }}
+            keyboardType={typeKeyboard}
+            placeholder={placeholder}
+            secureTextEntry={secureTextEntry}
+            style={{
+                width: 250,
+                height: 40,
+                borderColor: color,
+                borderWidth: 1,
+                borderRadius: 5,
+                marginBottom: 20,
+                paddingLeft: 10,
+                fontFamily: 'MetroMedium',
+            }}
         />
-    )
+    );
 }
-const App = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+
+const login = () => {
+    const [dapatFont]=useFonts({
+        'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
+        'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
+      });
+      if (!dapatFont){
+        return <Text>Font tidak di temukan...</Text>
+      }
+
   return (
     <View style={{
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        padding: 16,
     }}>
-      <Text style={{
-            fontSize: 30,
-            fontWeight: 'bold',
-            marginBottom: 20
-        }}>Login
-      </Text>
-    <View>
-    <TextInputCustom placeholder="Email" typeKeyboard="email-address"/>
-    <TextInputCustom placeholder="Password" typeKeyboard="default"/>
-    <View style={{ alignSelf: 'flex-end'}}>
-      <Text style={{color: 'red', fontSize: 14}}>Forgot Password?</Text>
-    </View>
-    <ButtonCustom text="Login" color="red"/>
-    <Text style={{
-        textAlign: 'center',
-        marginVertical: 20,
-        fontSize: 16,
-        color: '#888',
-    }}> Or login with social account </Text>
-        <View style={{ flexDirection:'row', justifyContent:'center'}}>
-            <ButtonCustom text="Google" color="blue"/>
-            <ButtonCustom text="Facebook" color="blue"/>
+        <View style ={{
+            width: '100%',
+            alignItems: 'flex-start',
+            marginBottom: -20
+        }}>
+            <Text style={{
+                fontSize: 50,
+                fontFamily: 'MetroBold',
+                marginBottom: 16,
+                marginTop: 50,
+            }}>Login</Text>
         </View>
+        <View style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+        }}>
+            <TextInputCustom placeholder="Email" color="gray" typeKeyboard="email-address" />
+            <TextInputCustom placeholder="Password" color="gray" typeKeyboard="default" secureTextEntry={true} />
+            <TouchableOpacity>
+                <Text style={{
+                    color: 'red',
+                    marginBottom: 20,
+                }}>Forgot Password?</Text>
+            </TouchableOpacity>
+            <ButtonCustom text="LOGIN" color="red" />
+            <Text style={{
+                fontSize: 16,
+                color: '#555',
+                marginBottom: 16,
+                textAlign: 'center',
+                width: '100%',
+            }}> Or login with social account</Text>
+            <View style ={{
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                width: '50%',
+            }}>
+                <TouchableOpacity style={{
+                    width: 50,
+                    height: 50,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginHorizontal: 8,
+                }}>
+                    <Image source={require('./assets/google.png')} style={{
+                        width: 40,
+                        height: 40,
+                    }} />
+                </TouchableOpacity>
+                <TouchableOpacity style={{
+                    width: 50,
+                    height: 50,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    marginHorizontal: 8,
+                }}>
+                    <Image source={require('./assets/facebook.png')} style={{
+                        width: 40,
+                        height: 40,
+                    }} />
+                </TouchableOpacity> 
+            </View>
         </View>
     </View>
   )
 }
 
-export default App
+export default login

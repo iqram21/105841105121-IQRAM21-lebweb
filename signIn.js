@@ -1,5 +1,6 @@
 import {Text, View, TextInput,TouchableOpacity,Image } from 'react-native'
 import React from 'react'
+import { useFonts } from 'expo-font'
 
 const ButtonCustom=({ text, color}) => {
     return (
@@ -39,12 +40,21 @@ const TextInputCustom = ({ placeholder, color, typeKeyboard })=> {
                 borderRadius: 5,
                 marginBottom: 20,
                 paddingLeft: 10,
+                fontFamily: 'MetroMedium',
             }}
         />
     );
 }
 
 const signIn = () => {
+    const [dapatFont]=useFonts({
+        'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
+        'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
+      });
+      if (!dapatFont){
+        return <Text>Font tidak di temukan...</Text>
+      }
+
   return (
     <View style={{
         flex: 1,
@@ -56,11 +66,11 @@ const signIn = () => {
         <View style={{
             width: '100%',
             alignItems: 'flex-start',
-            marginBottom: -150
+            marginBottom: -10
         }}>
             <Text style={{
                 fontSize: 50,
-                fontWeight:'bold',
+                fontFamily: 'MetroBold',
                 marginBottom: 16,
                 marginTop: 50,
             }}>Sign Up</Text>
