@@ -1,6 +1,7 @@
 import {Text, View, TextInput,TouchableOpacity,Image } from 'react-native'
 import React from 'react'
 import { useFonts } from 'expo-font'
+import { useNavigation } from '@react-navigation/native'; // Make sure to install and set up React Navigation
 
 const ButtonCustom=({ text, color}) => {
     return (
@@ -47,6 +48,7 @@ const TextInputCustom = ({ placeholder, color, typeKeyboard })=> {
 }
 
 const signIn = () => {
+    const navigation = useNavigation();
     const [dapatFont]=useFonts({
         'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
         'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
@@ -84,13 +86,15 @@ const signIn = () => {
             <TextInputCustom placeholder="Email" color="black" typeKeyboard="email-address"/>
             <TextInputCustom placeholder="Password" color="black" typeKeyboard="default" />
             <ButtonCustom text="SIGN UP" color="red" />
+            <TouchableOpacity onPress={() => navigation.navigate('Login')} style={{ marginTop: 16 }}>
             <Text style={{
                fontSize: 16,
                color: '#555',
                marginBottom: 16,
                textAlign: 'center',
                width: '100%', 
-            }}>Already have an account?</Text>
+            }}>Already have an account? Log in </Text>
+            </TouchableOpacity>
             <View style={{
                 flexDirection: 'row',
                 justifyContent: 'space-around',
