@@ -11,7 +11,7 @@ const ButtonCustom = ({ text, color }) => {
                 height: 50,
                 backgroundColor: color,
                 borderRadius: 50,
-                marginBottom: 40,
+                marginBottom: 40, 
                 justifyContent: 'center',
                 alignItems: 'center',
             }}>
