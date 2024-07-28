@@ -4,7 +4,7 @@ import React from 'react';
 const Bag = () => {
   return (
     <View style={styles.container}>
-      <Text>Bag</Text>
+      <Text>bag</Text>
     </View>
   );
 };

@@ -4,7 +4,7 @@ import React from 'react';
 const Favorit = () => {
   return (
     <View style={styles.container}>
-      <Text>Favorit</Text>
+      <Text>favorit</Text>
     </View>
   );
 };

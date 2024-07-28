@@ -10,7 +10,7 @@ const Profil = () => {
       <View style={styles.profileHeaderContainer}>
         <View style={styles.profileHeader}>
           <Image
-            source={require("../assets/iqram.jpeg")} // ganti dengan URL gambar profil yang sesuai
+            source={require("../assets/iqram.jpeg")} 
             style={styles.profileImage}
           />
           <View style={styles.profileText}>
