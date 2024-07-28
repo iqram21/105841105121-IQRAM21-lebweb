@@ -5,7 +5,7 @@ const Profil = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.title}>MyProfil</Text>
+        <Text style={styles.title}>My profil</Text>
       </View>
       <View style={styles.profileHeaderContainer}>
         <View style={styles.profileHeader}>
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    marginTop: 50,
   },
   headerContainer: {
     marginTop: 20,
@@ -82,6 +83,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   profileHeaderContainer: {
+    marginTop: 20,
     paddingLeft: 20,
     paddingTop: 10,
   },
@@ -106,6 +108,7 @@ const styles = StyleSheet.create({
     color: 'gray',
   },
   menuItem: {
+    marginTop: 10,
     borderBottomWidth: 1,
     borderBottomColor: "#f0f0f0",
   },
