@@ -66,8 +66,8 @@ const ForgotPassword = () => {
     };
 
     const [dapatFont]=useFonts({
-        'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
-        'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
+        'MetroBold': require('./../assets/fonts/Metropolis-Bold.otf'),
+        'MetroMedium': require('./../assets/fonts/Metropolis-Medium.otf'),
     });
     if (!dapatFont){
         return <Text>Font tidak di temukan...</Text>

@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Image } from 'react-native';
-import LoginPage from './LoginPage';
+import LoginPage from './Tampilan _awal/LoginPage';
 import HomePage from './tampilan/Home';
 import ShopPage from './tampilan/Shop';
 import BagPage from './tampilan/Bag';
