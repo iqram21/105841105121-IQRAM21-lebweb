@@ -50,7 +50,7 @@ const TextInputCustom = ({ placeholder, color, typeKeyboard, value, onChangeText
     );
 }
 
-const ForgotPassword = () => {
+const ForgotPasswordPage = () => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
 
@@ -126,4 +126,4 @@ const ForgotPassword = () => {
     );
 }
 
-export default ForgotPassword;
+export default ForgotPasswordPage;

@@ -47,7 +47,7 @@ const TextInputCustom = ({ placeholder, color, typeKeyboard })=> {
     );
 }
 
-const signIn = () => {
+const SingupPage = () => {
     const navigation = useNavigation();
     const [dapatFont]=useFonts({
         'MetroBold': require('./../assets/fonts/Metropolis-Bold.otf'),
@@ -130,4 +130,4 @@ const signIn = () => {
   );
 }
 
-export default signIn
+export default SingupPage

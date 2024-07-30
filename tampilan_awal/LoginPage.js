@@ -48,7 +48,7 @@ const TextInputCustom = ({ placeholder, color, typeKeyboard, secureTextEntry = f
     );
 }
 
-const LoginPage = () => {
+const loginPage = () => {
     const navigation = useNavigation();
     const [dapatFont] = useFonts({
         'MetroBold': require('./../assets/fonts/Metropolis-Bold.otf'),
@@ -134,4 +134,4 @@ const LoginPage = () => {
     );
 }
 
-export default LoginPage;
+export default loginPage;
